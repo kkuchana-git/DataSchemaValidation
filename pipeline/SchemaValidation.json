@@ -83,6 +83,17 @@
 						"value": "@equals(activity('Get Metadata1').output.structure,activity('Get Metadata2').output.structure)",
 						"type": "Expression"
 					},
+					"ifFalseActivities": [
+						{
+							"name": "Wait1",
+							"type": "Wait",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 15
+							}
+						}
+					],
 					"ifTrueActivities": [
 						{
 							"name": "Copy data1",
