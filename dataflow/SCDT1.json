@@ -46,13 +46,20 @@
 				"          location as string",
 				"     ),",
 				"     deletable:false,",
-				"     insertable:true,",
+				"     insertable:false,",
 				"     updateable:false,",
-				"     upsertable:false,",
+				"     upsertable:true,",
+				"     keys:['employee_id'],",
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          employee_id = emp_id,",
+				"          firstname = name,",
+				"          salary,",
+				"          location = loc",
+				"     )) ~> sink1"
 			]
 		}
 	}
