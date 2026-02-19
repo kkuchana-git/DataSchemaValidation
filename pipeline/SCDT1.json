@@ -25,8 +25,36 @@
 					},
 					"traceLevel": "Fine"
 				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "x",
+					"value": {
+						"value": "@pipeline().parameters.x",
+						"type": "Expression"
+					}
+				}
 			}
 		],
+		"parameters": {
+			"x": {
+				"type": "String",
+				"defaultValue": "90"
+			}
+		},
+		"variables": {
+			"x": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
