@@ -28,7 +28,8 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 derive(name = iif(isNull(name),'unkown',name)) ~> derivedColumn1"
+				"source1 derive(name = iif(isNull(name),'unkown',name),",
+				"          salary = iif(isNull( salary),'12000',salary)) ~> derivedColumn1"
 			]
 		}
 	}
